@@ -10,7 +10,7 @@ Pa-pic turns a laptop, a camera and a photo printer into a complete photobooth f
 
 1. Try the live demo: pick a template, type a name and take 4 photos with your camera.
 2. Look through the features, the 20 themes and the setup steps.
-3. Send us a message with the form to buy Pa-pic for a one-time ₱999, or to ask for a walkthrough.
+3. Send us a message with the form to buy Pa-pic for a one-time ₱499, or to ask for a walkthrough.
 4. We reply by email with payment details, then send your copy and help you set it up.
 
 ## Privacy
