@@ -38,7 +38,7 @@ h1,h2,h3{font-family:Fredoka,Poppins,sans-serif;line-height:1.08;margin:0}
 .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
 .btn.pri{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;border-color:var(--ink)}
 .btn.sm{padding:9px 18px;font-size:14px}
-.kick{display:inline-flex;align-items:center;gap:8px;font:700 12px Poppins;letter-spacing:1.8px;text-transform:uppercase;color:var(--a1);background:#fff;border:2px solid var(--ink);padding:6px 14px;border-radius:999px;box-shadow:3px 3px 0 var(--ink)}
+.kick{display:inline-flex;align-items:center;gap:8px;font:700 12px Poppins;letter-spacing:1.8px;text-transform:uppercase;color:#c8104f;background:#fff;border:2px solid var(--ink);padding:6px 14px;border-radius:999px;box-shadow:3px 3px 0 var(--ink)}
 .kick i{width:8px;height:8px;border-radius:50%;background:var(--a1);animation:blink 1.4s infinite}
 @keyframes blink{50%{opacity:.3;transform:scale(1.6)}}
 /* nav */
@@ -58,7 +58,7 @@ nav.top .links a{text-decoration:none;opacity:.8}nav.top .links a:hover{opacity:
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0}
 .chips{display:flex;gap:10px;flex-wrap:wrap}
 .chips span{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:6px 12px;font-weight:600;font-size:13.5px}
-.chips b{color:var(--a1)}
+.chips b{color:#c8104f}
 .stack{position:relative;height:520px}
 .stack canvas{position:absolute;background:#fff;padding:10px 10px 34px;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink);border-radius:4px}
 .stack .c1{width:78%;left:2%;top:24%;transform:rotate(-8deg);animation:f1 7s ease-in-out infinite}
@@ -66,7 +66,7 @@ nav.top .links a{text-decoration:none;opacity:.8}nav.top .links a:hover{opacity:
 .stack .c3{width:56%;right:0;bottom:0;transform:rotate(4deg);animation:f3 8s ease-in-out infinite}
 @keyframes f1{50%{transform:rotate(-6deg) translateY(-12px)}}@keyframes f2{50%{transform:rotate(9deg) translateY(10px)}}@keyframes f3{50%{transform:rotate(2deg) translateY(-8px)}}
 .sticker{position:absolute;z-index:3;font:700 15px Fredoka;background:var(--a2);border:2px solid var(--ink);border-radius:999px;padding:8px 16px;box-shadow:4px 4px 0 var(--ink);white-space:nowrap}
-.sticker.s1{left:-10px;top:8%;transform:rotate(-8deg);background:var(--a3);color:#fff;animation:bob 4s ease-in-out infinite}
+.sticker.s1{left:-10px;top:8%;transform:rotate(-8deg);background:var(--a3);color:var(--ink);animation:bob 4s ease-in-out infinite}
 .sticker.s2{right:6%;bottom:44%;transform:rotate(6deg);animation:bob 5s ease-in-out 1s infinite}
 .sticker.s3{left:12%;bottom:2%;transform:rotate(-4deg);background:var(--a1);color:#fff;animation:bob 4.5s ease-in-out .5s infinite}
 @keyframes bob{50%{translate:0 -10px}}
@@ -230,7 +230,7 @@ footer .wm{color:#fff;font-size:22px}
     <div class="dgrid">
       <div class="panel reveal">
         <h4>1 · Pick a template</h4><div class="tpick" id="tpick"></div>
-        <h4>2 · Name on the print</h4><input type="text" id="dName" value="Maia" maxlength="28">
+        <h4>2 · Name on the print</h4><input type="text" id="dName" aria-label="Name on the print" value="Maia" maxlength="28">
         <h4>3 · Shoot</h4>
         <button class="btn pri" id="dStart">Start camera</button>
         <label class="btn">Upload photos instead<input type="file" accept="image/*" multiple id="dUp" hidden></label>
@@ -576,7 +576,7 @@ $('#tgrid').innerHTML=THM.map(([n,a,b,c,bg])=>`<div class="tsw" title="${n}" sty
   fitCanvas($('#h1c'),byID('b1'),620);fitCanvas($('#h2c'),byID('b6'),220);fitCanvas($('#h3c'),byID('b2'),460);
   const ids=['b1','b4','b2','b11','b16','b6','b7','b21','b12','b15','b25','b23','b17','b30'];const m=$('#marq');
   for(const rep of [0,1])for(const id of ids){const c=document.createElement('canvas');fitCanvas(c,byID(id),SIZES[byID(id).sizeKey].w>SIZES[byID(id).sizeKey].h?380:200);m.appendChild(c)}
-  DEMO_IDS.forEach((id,i)=>{const b=document.createElement('button');b.className=i===0?'on':'';b.dataset.id=id;const c=document.createElement('canvas');fitCanvas(c,byID(id),160);b.appendChild(c);$('#tpick').appendChild(b)});
+  DEMO_IDS.forEach((id,i)=>{const b=document.createElement('button');b.className=i===0?'on':'';b.dataset.id=id;b.setAttribute('aria-label','Template '+(i+1));const c=document.createElement('canvas');fitCanvas(c,byID(id),160);b.appendChild(c);$('#tpick').appendChild(b)});
   showPreview();
 })();
 // scroll reveal
